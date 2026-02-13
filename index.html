@@ -3,74 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SRRC - Trading, Logistics & Telecom</title>
+<title>SRRC - Trading & Telecom Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body {font-family: Arial, sans-serif; margin:0; line-height:1.6;}
-header {background:#f47b20; color:white; padding:60px 20px; text-align:center;}
-section {padding:60px 20px; max-width:1100px; margin:auto;}
-h2 {color:#f47b20;}
-.services {display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px;}
-.box {background:#f5f5f5; padding:20px; border-radius:8px;}
-footer {background:#333; color:white; text-align:center; padding:20px;}
-button {background:#f47b20; color:white; padding:10px 20px; border:none; border-radius:5px;}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f9f9f9;
+color:#333;
+}
+
+nav{
+background:#111;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+}
+
+.hero{
+background:linear-gradient(135deg,#f47b20,#ff9c3d);
+color:white;
+text-align:center;
+padding:100px 20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+color:#f47b20;
+margin-bottom:30px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.card h3{
+color:#f47b20;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+gap:50px;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.stat{
+font-size:28px;
+font-weight:700;
+color:#f47b20;
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px 20px;
+margin-top:50px;
+}
+
+button{
+background:#111;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:6px;
+margin-top:20px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:30px;}
+}
+
 </style>
 </head>
+
 <body>
 
-<header>
+<nav>
+<div><strong>SRRC</strong></div>
+<div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<div class="hero">
 <h1>SAMAKI RUNGROEUNG (CAMBODIA) CO., LTD</h1>
-<p>Trading | Logistics | Telecom Infrastructure | Market Access</p>
-<p>Bringing You Prosperity</p>
-<button onclick="location.href='#contact'">Contact Us</button>
-</header>
+<p>Trading • Logistics • Telecom Infrastructure • Market Access</p>
+<button onclick="location.href='#contact'">Get In Touch</button>
+</div>
 
-<section>
+<section id="about">
 <h2>About SRRC</h2>
-<p>Established in 2021, SRRC provides integrated trading, import-export, logistics, and telecom infrastructure services in Cambodia and the region. We deliver reliable, compliant, and cost-effective solutions to domestic and international partners.</p>
+<p>
+Established in 2021, SRRC provides integrated trading, import-export, logistics,
+and telecom infrastructure services in Cambodia and international markets.
+We deliver compliant, cost-effective and reliable solutions to our partners.
+</p>
 </section>
 
-<section>
+<section id="services">
 <h2>Our Services</h2>
-<div class="services">
-<div class="box">
+<div class="grid">
+
+<div class="card">
 <h3>Import & Export</h3>
-<p>Customs clearance, license services, international shipping, regulatory compliance.</p>
+<p>Customs clearance, tariff handling, documentation management and cross-border compliance.</p>
 </div>
-<div class="box">
-<h3>Logistics</h3>
-<p>Transportation, supply chain management, factory logistics solutions.</p>
+
+<div class="card">
+<h3>Logistics Solutions</h3>
+<p>Transportation, supply chain management and industrial logistics coordination.</p>
 </div>
-<div class="box">
+
+<div class="card">
 <h3>Telecom Infrastructure</h3>
-<p>FTTH (GPON/AON), BTS construction, IBS systems, network design & deployment.</p>
+<p>FTTH (GPON/AON), BTS deployment, IBS systems and network design implementation.</p>
 </div>
-<div class="box">
+
+<div class="card">
 <h3>Market Access</h3>
-<p>Business enablement, regulatory advisory, project access in Cambodia ICT market.</p>
+<p>Business enablement, regulatory advisory and strategic partnership development.</p>
 </div>
+
 </div>
 </section>
 
-<section>
+<section id="projects">
 <h2>Our Strength</h2>
-<ul>
-<li>2500+ GPON sites designed</li>
-<li>1500+ BTS sites deployed</li>
-<li>Strong customs & regulatory expertise</li>
-<li>Deep local market knowledge</li>
-</ul>
+<div class="stats">
+<div>
+<div class="stat">2500+</div>
+GPON Sites Designed
+</div>
+<div>
+<div class="stat">1500+</div>
+BTS Sites Deployed
+</div>
+<div>
+<div class="stat">2021</div>
+Established
+</div>
+</div>
 </section>
 
 <section id="contact">
 <h2>Contact Us</h2>
-<p>Address: St. 8B (Borey Lay Kong), Sangkat Dangkor, Phnom Penh</p>
-<p>Phone: +855 974 055 678</p>
-<p>Email: srrc.cambodia.com@gmail.com</p>
-<p>Website: www.srrc.com.kh</p>
+<p><strong>Address:</strong> Phnom Penh, Cambodia</p>
+<p><strong>Phone:</strong> +855 974 055 678</p>
+<p><strong>Email:</strong> srrc.cambodia.com@gmail.com</p>
+<p><strong>Website:</strong> www.srrc.com.kh</p>
 </section>
 
 <footer>
-<p>© 2025 SRRC - All Rights Reserved</p>
+© 2025 SRRC | Bringing You Prosperity
 </footer>
 
 </body>

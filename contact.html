@@ -1,9 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SRRC Projects</title>
+<title>Contact SRRC</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+.contact-container{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 30px rgba(0,0,0,0.05);
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:6px;
+font-family:'Poppins',sans-serif;
+}
+
+textarea{
+height:120px;
+}
+
+.submit-btn{
+background:#f47b20;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+.info-box{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 30px rgba(0,0,0,0.05);
+}
+
+@media(max-width:768px){
+.contact-container{
+grid-template-columns:1fr;
+}
+}
+</style>
 </head>
 <body>
 
@@ -19,92 +69,46 @@
 </nav>
 
 <section>
-<h2>Our Implementation Projects</h2>
+<h2>Contact Us</h2>
 
-<div class="grid">
+<div class="contact-container">
 
-<div class="card">
-<h3>FTTH Network Design & Deployment</h3>
-<p>
-SRRC has designed and implemented over 2500 GPON sites across Cambodia.
-Our scope includes full-cycle fiber network design, backbone planning,
-distribution network layout and onsite deployment supervision.
-</p>
+<div class="info-box">
+<h3>Company Information</h3>
+<p><strong>Company Name:</strong><br>
+SAMAKI RUNGROEUNG (CAMBODIA) CO., LTD</p>
+
+<p><strong>Phone:</strong><br>
++855 974 055 678</p>
+
+<p><strong>Email:</strong><br>
+srrc.cambodia.com@gmail.com</p>
+
+<p><strong>Address:</strong><br>
+Phnom Penh, Cambodia</p>
+
+<p><strong>Working Hours:</strong><br>
+Monday – Saturday<br>
+08:00 – 17:30</p>
 </div>
 
-<div class="card">
-<h3>BTS Infrastructure Deployment</h3>
-<p>
-More than 1500 BTS sites deployed from 2021–2025,
-including tower construction, civil works, equipment installation,
-antenna configuration and network integration.
-</p>
-</div>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<h3>Send Us a Message</h3>
 
-<div class="card">
-<h3>Large Building Network Systems</h3>
-<p>
-Comprehensive internet and structured cabling systems for major buildings,
-including government and commercial complexes.
-Projects include Ministry-level buildings and KYI Center.
-</p>
-</div>
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="text" name="subject" placeholder="Subject">
+<textarea name="message" placeholder="Your Message" required></textarea>
 
-<div class="card">
-<h3>Inbuilding Solutions (IBS)</h3>
-<p>
-Design and deployment of indoor telecom coverage systems
-including distributed antenna systems (DAS),
-signal optimization and indoor fiber architecture.
-</p>
-</div>
-
-<div class="card">
-<h3>Underground & Aerial Fiber Projects</h3>
-<p>
-Execution of large-scale fiber optic deployment projects,
-including underground trenching, aerial fiber installation,
-splicing, testing and commissioning.
-</p>
-</div>
-
-<div class="card">
-<h3>Integrated Telecom & Civil Works</h3>
-<p>
-Combined technical and construction capability delivering
-complete telecom infrastructure solutions from planning to operation.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<h2>Key Achievements</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>2500+ GPON Sites</h3>
-<p>Nationwide fiber infrastructure coverage design experience.</p>
-</div>
-
-<div class="card">
-<h3>1500+ BTS Sites</h3>
-<p>Multi-year telecom infrastructure deployment record.</p>
-</div>
-
-<div class="card">
-<h3>Nationwide Coverage</h3>
-<p>Projects executed across major provinces in Cambodia.</p>
-</div>
+<button type="submit" class="submit-btn">Send Message</button>
+</form>
 
 </div>
 
 </section>
 
 <footer>
-© 2025 SRRC Cambodia | Infrastructure Excellence
+© 2025 SRRC Cambodia | Contact & Business Inquiry
 </footer>
 
 </body>

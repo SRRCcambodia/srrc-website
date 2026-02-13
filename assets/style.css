@@ -1,0 +1,67 @@
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f8f9fb;
+color:#333;
+}
+
+nav{
+background:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 60px;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
+}
+
+nav img{height:50px;}
+
+nav a{
+text-decoration:none;
+color:#333;
+margin-left:25px;
+font-weight:500;
+}
+
+.hero{
+background:linear-gradient(135deg,#f47b20,#ff9c3d);
+color:white;
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{font-size:40px;}
+
+section{
+padding:80px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+color:#f47b20;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 30px rgba(0,0,0,0.05);
+}
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+}
+

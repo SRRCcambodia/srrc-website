@@ -44,8 +44,8 @@ color:#f47b20;
 position:relative;
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1494412685616-a5d310fbb07d?q=80&w=1920');
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
@@ -55,8 +55,8 @@ justify-content:center;
 align-items:center;
 text-align:center;
 color:white;
-padding:20px;
 }
+
 
 .hero h1{
 font-size:60px;

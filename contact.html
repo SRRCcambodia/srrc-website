@@ -54,6 +54,7 @@ grid-template-columns:1fr;
 }
 }
 </style>
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lf1BnUsAAAAAGmEKbaZv4tMqVt8UkgOj7-IlZnX"></script>
 </head>
 <body>
 
@@ -106,10 +107,7 @@ grid-template-columns:1fr;
 <label>Message *</label>
 <textarea name="message" required minlength="10"></textarea>
 </div>
-
-<!-- reCAPTCHA -->
-<div class="g-recaptcha" data-sitekey="6Lf1BnUsAAAAAGmEKbaZv4tMqVt8UkgOj7-IlZnX"></div>
-
+  
 <button type="submit" class="btn-primary" id="submitBtn">
 <span id="btnText">Send Message</span>
 <span class="spinner" id="spinner"></span>
@@ -125,7 +123,7 @@ Your message has been sent successfully. We will contact you as soon as possible
 </div>
 </section>
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e){
@@ -225,6 +223,27 @@ alert("There was an error. Please try again.");
 
 spinner.style.display = "none";
 btnText.style.display = "inline";
+});
+</script>
+  <script>
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e){
+e.preventDefault();
+
+grecaptcha.ready(function() {
+grecaptcha.execute('6Lf1BnUsAAAAAGmEKbaZv4tMqVt8UkgOj7-IlZnX', {action: 'submit'}).then(function(token) {
+
+let input = document.createElement('input');
+input.type = 'hidden';
+input.name = 'g-recaptcha-response';
+input.value = token;
+form.appendChild(input);
+
+form.submit();
+
+});
+});
 });
 </script>
 </body>

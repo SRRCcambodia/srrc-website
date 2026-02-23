@@ -202,3 +202,23 @@ color:#e53935;
 font-size:14px;
 margin-top:5px;
 }
+
+/* ===== SERVICE CTA ===== */
+
+.cta-service{
+text-align:center;
+padding:80px 20px;
+background:#f47b20;
+color:white;
+margin-top:80px;
+}
+
+.cta-service h2{
+color:white;
+margin-bottom:20px;
+}
+
+.cta-service p{
+margin-bottom:30px;
+font-size:18px;
+}

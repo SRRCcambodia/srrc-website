@@ -1,114 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Contact SRRC</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | SRRC</title>
+
 <link rel="stylesheet" href="assets/style.css">
+
+<!-- Google reCAPTCHA v2 -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <style>
-.contact-container{
+
+/* ===== CONTACT LAYOUT ===== */
+
+.contact-wrapper{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:50px;
+gap:60px;
+max-width:1200px;
+margin:100px auto;
+padding:0 20px;
 }
 
-form{
-background:white;
-padding:30px;
+.contact-info{
+background:#fff4ec;
+padding:40px;
 border-radius:12px;
-box-shadow:0 5px 30px rgba(0,0,0,0.05);
+}
+
+.contact-info h3{
+color:#f47b20;
+margin-bottom:20px;
+}
+
+.contact-form{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 15px 50px rgba(0,0,0,0.05);
+}
+
+.form-group{
+margin-bottom:20px;
+display:flex;
+flex-direction:column;
+}
+
+label{
+font-weight:600;
+margin-bottom:8px;
 }
 
 input, textarea{
-width:100%;
 padding:12px;
-margin-bottom:15px;
-border:1px solid #ddd;
+border:1px solid #ccc;
 border-radius:6px;
-font-family:'Poppins',sans-serif;
+transition:0.3s;
+font-family:inherit;
 }
 
-textarea{
-height:120px;
+input:focus, textarea:focus{
+border-color:#f47b20;
+outline:none;
 }
 
-.submit-btn{
+.input-error{
+border:2px solid #e53935;
+background:#fff5f5;
+}
+
+.error-message{
+color:#e53935;
+font-size:14px;
+margin-top:5px;
+}
+
+.btn-primary{
 background:#f47b20;
 color:white;
+padding:14px;
 border:none;
-padding:12px 20px;
 border-radius:6px;
 cursor:pointer;
 font-weight:600;
+transition:0.3s;
+width:100%;
 }
 
-.info-box{
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 5px 30px rgba(0,0,0,0.05);
+.btn-primary:hover{
+background:#d96512;
 }
 
-@media(max-width:768px){
-.contact-container{
+.spinner{
+display:none;
+width:18px;
+height:18px;
+border:3px solid white;
+border-top:3px solid transparent;
+border-radius:50%;
+animation:spin 0.8s linear infinite;
+margin-left:10px;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+.success-message{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#e8f5e9;
+color:#2e7d32;
+border-radius:6px;
+font-weight:500;
+text-align:center;
+}
+
+@media(max-width:900px){
+.contact-wrapper{
 grid-template-columns:1fr;
 }
 }
+
 </style>
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lf1BnUsAAAAAGmEKbaZv4tMqVt8UkgOj7-IlZnX"></script>
+
 </head>
 <body>
 
-<nav>
-<img src="logo.png">
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
-</div>
-</nav>
+<section class="contact-wrapper">
 
-<section>
-<h2>Contact Us</h2>
-
-<div class="contact-wrapper">
-
+<!-- COMPANY INFO -->
 <div class="contact-info">
 <h3>SAMAKI RUNGROEUNG (CAMBODIA) CO., LTD</h3>
-<p><strong>Phone:</strong> +855 974 055 678</p>
-<p><strong>Email:</strong> srrc.cambodia.com@gmail.com</p>
-<p><strong>Address:</strong> Phnom Penh, Cambodia</p>
+
+<p><strong>Address:</strong><br>
+Phnom Penh, Cambodia</p>
+
+<p><strong>Phone:</strong><br>
++855 974 055 678</p>
+
+<p><strong>Email:</strong><br>
+info@srrccambodia.com</p>
+
+<p><strong>Working Hours:</strong><br>
+Monday – Saturday<br>
+08:00 – 17:30</p>
+
 </div>
 
+<!-- CONTACT FORM -->
 <div class="contact-form">
 
-<form id="contactForm" action="https://formspree.io/f/mnjbopvl" method="POST" novalidate>
+<form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
 <!-- Honeypot -->
 <input type="text" name="_gotcha" style="display:none">
 
 <div class="form-group">
 <label>Full Name *</label>
-<input type="text" name="name" required>
+<input type="text" name="name" id="name" required>
+<span class="error-message" id="nameError"></span>
 </div>
 
 <div class="form-group">
 <label>Email *</label>
-<input type="email" name="email" required>
+<input type="email" name="email" id="email" required>
+<span class="error-message" id="emailError"></span>
 </div>
 
 <div class="form-group">
 <label>Phone *</label>
-<input type="tel" name="phone" pattern="^\+?[0-9]{8,15}$" required>
+<input type="tel" name="phone" id="phone" pattern="^\+?[0-9]{8,15}$" required>
+<span class="error-message" id="phoneError"></span>
 </div>
 
 <div class="form-group">
 <label>Message *</label>
-<textarea name="message" required minlength="10"></textarea>
+<textarea name="message" id="message" minlength="10" required></textarea>
+<span class="error-message" id="messageError"></span>
 </div>
-  
-<button type="submit" class="btn-primary" id="submitBtn">
+
+<div class="g-recaptcha" data-sitekey="6LeG03UsAAAAALpvvh33IAkfpBRuNrNlmEcMeE7q"></div>
+
+<button type="submit" class="btn-primary">
 <span id="btnText">Send Message</span>
 <span class="spinner" id="spinner"></span>
 </button>
@@ -120,85 +197,50 @@ Your message has been sent successfully. We will contact you as soon as possible
 </form>
 
 </div>
-</div>
+
 </section>
-
-
 
 <script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
 
-let valid = true;
-
-// Reset errors
-document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
-document.querySelectorAll("input, textarea").forEach(el => el.classList.remove("input-error"));
-
-// Name
-let name = document.getElementById("name").value.trim();
-if(name.length < 3){
-document.getElementById("nameError").textContent = "Please enter at least 3 characters.";
-document.getElementById("name").classList.add("input-error");
-valid = false;
-}
-
-// Email
-let email = document.getElementById("email").value.trim();
-let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-if(!emailPattern.test(email)){
-document.getElementById("emailError").textContent = "Please enter a valid email address.";
-document.getElementById("email").classList.add("input-error");
-valid = false;
-}
-
-// Phone
-let phone = document.getElementById("phone").value.trim();
-let phonePattern = /^\+?[0-9]{8,15}$/;
-if(!phonePattern.test(phone)){
-document.getElementById("phoneError").textContent = "Phone must be 8–15 digits (numbers only).";
-document.getElementById("phone").classList.add("input-error");
-valid = false;
-}
-
-// Subject
-let subject = document.getElementById("subject").value.trim();
-if(subject.length < 3){
-document.getElementById("subjectError").textContent = "Please enter a valid subject.";
-document.getElementById("subject").classList.add("input-error");
-valid = false;
-}
-
-// Message
-let message = document.getElementById("message").value.trim();
-if(message.length < 10){
-document.getElementById("messageError").textContent = "Message must be at least 10 characters.";
-document.getElementById("message").classList.add("input-error");
-valid = false;
-}
-
-if(!valid){
-e.preventDefault();
-}
-
-});
-</script>
-
-</div>
-
-</section>
-
-<footer>
-© 2025 SRRC Cambodia | Contact & Business Inquiry
-</footer>
-
-  <script>
 const form = document.getElementById('contactForm');
 const spinner = document.getElementById('spinner');
 const btnText = document.getElementById('btnText');
 const successMessage = document.getElementById('successMessage');
 
 form.addEventListener('submit', async function(e){
+
 e.preventDefault();
+
+let valid = true;
+
+document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('input-error'));
+
+if(document.getElementById('name').value.length < 3){
+document.getElementById('nameError').textContent = "Please enter at least 3 characters.";
+document.getElementById('name').classList.add('input-error');
+valid = false;
+}
+
+if(!document.getElementById('email').checkValidity()){
+document.getElementById('emailError').textContent = "Please enter a valid email.";
+document.getElementById('email').classList.add('input-error');
+valid = false;
+}
+
+if(!document.getElementById('phone').checkValidity()){
+document.getElementById('phoneError').textContent = "Phone must be 8–15 digits.";
+document.getElementById('phone').classList.add('input-error');
+valid = false;
+}
+
+if(document.getElementById('message').value.length < 10){
+document.getElementById('messageError').textContent = "Message must be at least 10 characters.";
+document.getElementById('message').classList.add('input-error');
+valid = false;
+}
+
+if(!valid) return;
 
 spinner.style.display = "inline-block";
 btnText.style.display = "none";
@@ -206,45 +248,26 @@ btnText.style.display = "none";
 const data = new FormData(form);
 
 try{
-await fetch(form.action, {
-method: form.method,
-body: data,
-headers: {
-'Accept': 'application/json'
-}
+await fetch(form.action,{
+method:form.method,
+body:data,
+headers:{'Accept':'application/json'}
 });
 
 form.reset();
-successMessage.style.display = "block";
+successMessage.style.display="block";
+grecaptcha.reset();
 }
-catch(error){
+catch{
 alert("There was an error. Please try again.");
 }
 
-spinner.style.display = "none";
-btnText.style.display = "inline";
+spinner.style.display="none";
+btnText.style.display="inline";
+
 });
+
 </script>
-  <script>
-const form = document.getElementById('contactForm');
 
-form.addEventListener('submit', function(e){
-e.preventDefault();
-
-grecaptcha.ready(function() {
-grecaptcha.execute('6Lf1BnUsAAAAAGmEKbaZv4tMqVt8UkgOj7-IlZnX', {action: 'submit'}).then(function(token) {
-
-let input = document.createElement('input');
-input.type = 'hidden';
-input.name = 'g-recaptcha-response';
-input.value = token;
-form.appendChild(input);
-
-form.submit();
-
-});
-});
-});
-</script>
 </body>
 </html>

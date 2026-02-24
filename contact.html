@@ -213,28 +213,39 @@ e.preventDefault();
 
 let valid = true;
 
+// Reset
 document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
 document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('input-error'));
 
-if(document.getElementById('name').value.length < 3){
-document.getElementById('nameError').textContent = "Please enter at least 3 characters.";
+// ===== NAME =====
+const name = document.getElementById('name').value.trim();
+if(name.length < 3){
+document.getElementById('nameError').textContent = "Full name must be at least 3 characters.";
 document.getElementById('name').classList.add('input-error');
 valid = false;
 }
 
-if(!document.getElementById('email').checkValidity()){
-document.getElementById('emailError').textContent = "Please enter a valid email.";
+// ===== EMAIL =====
+const email = document.getElementById('email').value.trim();
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+if(!emailRegex.test(email)){
+document.getElementById('emailError').textContent = "Please enter a valid email address.";
 document.getElementById('email').classList.add('input-error');
 valid = false;
 }
 
-if(!document.getElementById('phone').checkValidity()){
-document.getElementById('phoneError').textContent = "Phone must be 8–15 digits.";
+// ===== PHONE =====
+const phone = document.getElementById('phone').value.trim();
+const phoneRegex = /^\+?[0-9]{8,15}$/;
+if(!phoneRegex.test(phone)){
+document.getElementById('phoneError').textContent = "Phone must be 8–15 digits, numbers only.";
 document.getElementById('phone').classList.add('input-error');
 valid = false;
 }
 
-if(document.getElementById('message').value.length < 10){
+// ===== MESSAGE =====
+const message = document.getElementById('message').value.trim();
+if(message.length < 10){
 document.getElementById('messageError').textContent = "Message must be at least 10 characters.";
 document.getElementById('message').classList.add('input-error');
 valid = false;
@@ -242,6 +253,7 @@ valid = false;
 
 if(!valid) return;
 
+// Loading
 spinner.style.display = "inline-block";
 btnText.style.display = "none";
 

@@ -42,7 +42,7 @@ position:relative;
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('assets/images/srrc background.png');
+url('images/srrc background.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;

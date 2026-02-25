@@ -322,3 +322,35 @@ color:#2e7d32;
 border-radius:6px;
 font-weight:500;
 }
+
+/* ===== CORE SERVICE CTA ===== */
+
+.core-service-cta{
+text-align:center;
+margin-top:60px;
+padding-top:30px;
+border-top:1px solid #eee;
+}
+
+.core-service-cta p{
+font-size:18px;
+margin-bottom:20px;
+color:#555;
+}
+
+.btn-core-cta{
+display:inline-block;
+background:#f47b20;
+color:white;
+padding:14px 35px;
+border-radius:6px;
+font-weight:600;
+text-decoration:none;
+transition:all 0.3s ease;
+}
+
+.btn-core-cta:hover{
+background:#d96512;
+transform:translateY(-3px);
+box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}

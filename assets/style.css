@@ -42,7 +42,7 @@ position:relative;
 height:100vh;
 background:
 linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('images/srrc background.png');
+url('images/srrc background3.png');
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
@@ -327,7 +327,7 @@ font-weight:500;
 
 .core-service-cta{
 text-align:center;
-margin-top:60px;
+margin-top:10px;
 padding-top:30px;
 border-top:1px solid #eee;
 }

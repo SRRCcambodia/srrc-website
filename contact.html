@@ -267,6 +267,15 @@ valid = false;
 
 if(!valid) return;
 
+//==== form division======
+const params = new URLSearchParams(window.location.search);
+const division = params.get("division");
+
+if(division){
+    const messageField = document.getElementById("message");
+    messageField.value = "Inquiry regarding " + division + " division.";
+}
+  
 // Loading
 spinner.style.display = "inline-block";
 btnText.style.display = "none";

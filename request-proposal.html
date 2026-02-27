@@ -100,7 +100,8 @@ grid-template-columns:1fr;
 }
 
 </style>
-
+  
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -211,8 +212,12 @@ government partnerships and large-scale commercial engagement.
 <input type="tel" name="phone" pattern="^\+?[0-9]{8,15}$" required>
 </div>
 
+<div class="full-width" style="text-align:center;margin-bottom:20px;">
+<div class="g-recaptcha" data-sitekey="6LeG03UsAAAAALpvvh33IAkfpBRuNrNlmEcMeE7q"></div>
+</div>
+  
 <div class="full-width" style="text-align:center;margin-top:30px;">
-<button type="submit" class="submit-proposal">
+<button type="submit" class="submit-proposal" onclick="return validateProposalCaptcha()">
 Submit Strategic Proposal
 </button>
 </div>
@@ -226,6 +231,19 @@ Submit Strategic Proposal
 <footer>
 © 2026 SRRC Holdings | Strategic Multi-Sector Solutions
 </footer>
+<script>
 
+function validateProposalCaptcha(){
+var response = grecaptcha.getResponse();
+
+if(response.length == 0){
+alert("Please verify that you are not a robot.");
+return false;
+}
+
+return true;
+}
+
+</script>
 </body>
 </html>

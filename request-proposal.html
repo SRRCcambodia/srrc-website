@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategic Proposal | SRRC Holdings</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+<style>
+
+/* HERO HEADER */
+.proposal-hero{
+background:#111;
+color:white;
+padding:120px 20px;
+text-align:center;
+}
+
+.proposal-hero h1{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.proposal-hero p{
+font-size:20px;
+max-width:800px;
+margin:auto;
+opacity:0.85;
+}
+
+/* FORM CONTAINER */
+.proposal-container{
+max-width:1000px;
+margin:80px auto;
+padding:40px;
+background:white;
+border-radius:16px;
+box-shadow:0 20px 60px rgba(0,0,0,0.08);
+}
+
+.proposal-container h2{
+margin-bottom:40px;
+text-align:center;
+}
+
+.proposal-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.full-width{
+grid-column:1 / -1;
+}
+
+.proposal-container label{
+font-weight:600;
+margin-bottom:8px;
+display:block;
+}
+
+.proposal-container input,
+.proposal-container select,
+.proposal-container textarea{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:8px;
+margin-bottom:20px;
+font-family:'Poppins',sans-serif;
+}
+
+.proposal-container textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.submit-proposal{
+background:#f47b20;
+color:white;
+padding:16px 40px;
+border:none;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.submit-proposal:hover{
+background:#d96512;
+transform:translateY(-3px);
+}
+
+@media(max-width:900px){
+.proposal-grid{
+grid-template-columns:1fr;
+}
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<a href="index.html" class="logo-link">
+<img src="assets/images/logo.png" alt="SRRC Logo" class="logo">
+</a>
+
+<div>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="proposal-hero">
+<h1>Submit Strategic Proposal</h1>
+<p>
+For enterprise-level cooperation, infrastructure projects, 
+government partnerships and large-scale commercial engagement.
+</p>
+</section>
+
+<!-- FORM -->
+<section class="proposal-container">
+<h2>Project & Partnership Information</h2>
+
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+<div class="proposal-grid">
+
+<div>
+<label>Company Name *</label>
+<input type="text" name="company" required>
+</div>
+
+<div>
+<label>Country *</label>
+<input type="text" name="country" required>
+</div>
+
+<div>
+<label>Organization Type *</label>
+<select name="org_type" required>
+<option value="">Select</option>
+<option>Private Company</option>
+<option>Government</option>
+<option>Telecom Operator</option>
+<option>Infrastructure Developer</option>
+<option>Investor</option>
+</select>
+</div>
+
+<div>
+<label>Business Division *</label>
+<select name="division" required>
+<option value="">Select</option>
+<option>Trading & Procurement</option>
+<option>Logistics & Supply Chain</option>
+<option>Telecom Infrastructure</option>
+<option>Market Representation</option>
+<option>Integrated Multi-Division Project</option>
+</select>
+</div>
+
+<div>
+<label>Estimated Budget Range *</label>
+<select name="budget" required>
+<option value="">Select</option>
+<option>< 50,000 USD</option>
+<option>50,000 – 500,000 USD</option>
+<option>500,000 – 5M USD</option>
+<option>> 5M USD</option>
+</select>
+</div>
+
+<div>
+<label>Expected Timeline *</label>
+<select name="timeline" required>
+<option value="">Select</option>
+<option>Immediate (0–3 months)</option>
+<option>Short Term (3–6 months)</option>
+<option>Mid Term (6–12 months)</option>
+<option>Long Term (12+ months)</option>
+</select>
+</div>
+
+<div class="full-width">
+<label>Project Description *</label>
+<textarea name="description" required></textarea>
+</div>
+
+<div class="full-width">
+<label>Contact Person *</label>
+<input type="text" name="contact_person" required>
+</div>
+
+<div>
+<label>Email *</label>
+<input type="email" name="email" required>
+</div>
+
+<div>
+<label>Phone *</label>
+<input type="tel" name="phone" pattern="^\+?[0-9]{8,15}$" required>
+</div>
+
+<div class="full-width" style="text-align:center;margin-top:30px;">
+<button type="submit" class="submit-proposal">
+Submit Strategic Proposal
+</button>
+</div>
+
+</div>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 SRRC Holdings | Strategic Multi-Sector Solutions
+</footer>
+
+</body>
+</html>

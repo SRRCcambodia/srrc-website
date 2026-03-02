@@ -376,17 +376,17 @@ box-shadow:0 8px 25px rgba(0,0,0,0.15);
 /* ===== ENTERPRISE CTA ===== */
 
 .enterprise-cta{
-margin-top:80px;
+margin-top:60px;
 padding:60px 30px;
-background:linear-gradient(135deg,#111,#1f1f1f);
+background: linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
 text-align:center;
 border-radius:20px;
 }
 
 .enterprise-cta h2{
-font-size:32px;
-margin-bottom:20px;
+font-size:28px;
+margin-bottom:10px;
 }
 
 .enterprise-cta p{

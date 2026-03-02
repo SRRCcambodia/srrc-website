@@ -237,8 +237,8 @@ Submit Strategic Proposal
 <footer>
 © 2026 SRRC Holdings | Strategic Multi-Sector Solutions
 </footer>
+  
 <script>
-
 function validateProposalCaptcha(){
 var response = grecaptcha.getResponse();
 
@@ -249,7 +249,28 @@ return false;
 
 return true;
 }
+</script>
+  
+<script>
+const params = new URLSearchParams(window.location.search);
+const division = params.get("division");
 
+if(division){
+    const divisionSelect = document.querySelector("select[name='division']");
+    
+    if(division === "trading"){
+        divisionSelect.value = "Trading & Procurement";
+    }
+    if(division === "logistics"){
+        divisionSelect.value = "Logistics & Supply Chain";
+    }
+    if(division === "telecom"){
+        divisionSelect.value = "Telecom Infrastructure";
+    }
+    if(division === "market"){
+        divisionSelect.value = "Market Representation";
+    }
+}
 </script>
 </body>
 </html>

@@ -329,6 +329,26 @@ btnText.style.display="inline";
 
 });
 
+// division
+const params = new URLSearchParams(window.location.search);
+const division = params.get("division");
+
+if(division){
+    const divisionSelect = document.querySelector("select[name='division']");
+    
+    if(division === "trading"){
+        divisionSelect.value = "Trading & Procurement";
+    }
+    if(division === "logistics"){
+        divisionSelect.value = "Logistics & Supply Chain";
+    }
+    if(division === "telecom"){
+        divisionSelect.value = "Telecom Infrastructure (FTTH / IBS / BTS)";
+    }
+    if(division === "market"){
+        divisionSelect.value = "Market Agent / Representation";
+    }
+}
 </script>
 
 </body>

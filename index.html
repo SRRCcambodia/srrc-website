@@ -268,28 +268,37 @@ WhatsApp
 </div>
 
 <script>
-const elements = document.querySelectorAll('.fade-in');
+document.addEventListener("DOMContentLoaded", function(){
 
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-}
-});
-}, { threshold: 0.3 });
+  // ===== FADE IN OBSERVER =====
+  const elements = document.querySelectorAll(".fade-in");
 
-elements.forEach(el => observer.observe(el));
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.3 });
 
-const mobileMenu = document.getElementById("mobile-menu");
-const navLinks = document.getElementById("nav-links");
+  elements.forEach(el => observer.observe(el));
 
-mobileMenu.addEventListener("click", () => {
-navLinks.classList.toggle("active");
+  // ===== MOBILE MENU =====
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  if(mobileMenu){
+    mobileMenu.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+
 });
 </script>
 
 </body>
 </html>
+
 
 
 

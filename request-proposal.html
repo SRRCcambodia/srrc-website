@@ -111,18 +111,27 @@ grid-template-columns:1fr;
 <body>
 
 <!-- NAV -->
-<nav>
+<!-- NAVBAR -->
+<nav class="navbar">
 <a href="index.html" class="logo-link">
 <img src="logo.png" alt="SRRC Logo" class="logo">
 </a>
 
-<div>
-<a href="index.html">Home</a>
-<a href="assets/SRRCprofile.pdf" target="_blank">Profile</a>
-<a href="services.html">Services</a>
-<a href="projects.html">Projects</a>
-<a href="contact.html">Contact</a>
+<div class="menu-toggle" id="mobile-menu">
+<span></span>
+<span></span>
+<span></span>
 </div>
+
+<ul class="nav-links" id="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="assets/docs/SRRC_profile.pdf" target="_blank">Profile</a></li>
+</ul>
+
 </nav>
 
 <!-- HERO -->
@@ -237,7 +246,16 @@ Submit Strategic Proposal
 <footer>
 © 2026 SRRC Holdings | Strategic Multi-Sector Solutions
 </footer>
-  
+
+<script>
+  // ===== MOBILE MENU =====
+const mobileMenu = document.getElementById("mobile-menu");
+const navLinks = document.getElementById("nav-links");
+
+mobileMenu.addEventListener("click", () => {
+navLinks.classList.toggle("active");
+});
+</script>
 <script>
 function validateProposalCaptcha(){
 var response = grecaptcha.getResponse();

@@ -256,38 +256,25 @@ WhatsApp
 </a>
 
 </div>
-
+    
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+const elements = document.querySelectorAll('.fade-in');
 
-  // ===== FADE IN OBSERVER =====
-  const elements = document.querySelectorAll(".fade-in");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.3 });
-
-  elements.forEach(el => observer.observe(el));
-
-  // ===== MOBILE MENU =====
-  const mobileMenu = document.getElementById("mobile-menu");
-  const navLinks = document.getElementById("nav-links");
-
-  if(mobileMenu){
-    mobileMenu.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  }
-
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+}
 });
+}, { threshold: 0.3 });
+
+elements.forEach(el => observer.observe(el));
 </script>
+
 
 </body>
 </html>
+
 
 
 

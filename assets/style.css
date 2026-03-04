@@ -208,10 +208,10 @@ color:#f47b20;
 /* ===== CTA ===== */
 .cta{
 position:relative;
-height:60vh;
+height:40vh;
 background:
 linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-url('images/srrc background3.png');
+url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;

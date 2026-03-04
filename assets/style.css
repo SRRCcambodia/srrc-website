@@ -209,7 +209,8 @@ color:#f47b20;
 .cta{
 position:relative;
 height:40vh;
-background:#f47b20; linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))
+background:
+linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6))
 url('images/srrc background3.png');
 background-size:cover;
 background-position:center;

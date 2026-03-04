@@ -208,7 +208,7 @@ color:#f47b20;
 /* ===== CTA ===== */
 .cta{
 position:relative;
-height:40vh;
+height:60vh;
 background:
 linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
 url('images/srrc background3.png');
